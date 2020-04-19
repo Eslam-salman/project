@@ -84,7 +84,7 @@ class Search extends Component{
                                 <div className="row">
                                     <div className="col-lg-12  d-flex changable-region">
                                     <div  className="custom-select-2 b-left py-3 pr-2"style={{width:"50rem"}} >
-                                       <select className="custom-select" value={this.state.typeselect}    
+                                       <select className="custom-select text-subtitle" value={this.state.typeselect}    
                                          onChange={this.handletypeChange} id="inlineFormCustomSelect" >
                                         <option value="" data-select2-id="3">النوع...</option>
                                        <option value="للبيع">للبيع</option>
@@ -92,7 +92,7 @@ class Search extends Component{
                                        </select>
                                           </div>
                                        <div  className="custom-select-2 b-left py-3 pr-0"style={{width:"50rem"}} >
-                                       <select className="custom-select" value={this.state.placeselect}
+                                       <select className="custom-select text-subtitle" value={this.state.placeselect}
                                            onChange={this.handleplaceChange}  id="inlineFormCustomSelect" >
                                        
                                        <option value="" data-select2-id="3">الموقع...</option>
@@ -121,7 +121,7 @@ class Search extends Component{
                                     </div>
                                     <div className="py-3" >
                                       
-                                    <button  type="submit"  className="btn search-btn px-5 "><span>بحث</span></button>
+                                    <button  type="submit"  className="btn search-btn px-5 text-bright"><span>بحث</span></button>
                                   
                                     </div>
                                     

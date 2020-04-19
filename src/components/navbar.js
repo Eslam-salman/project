@@ -20,13 +20,13 @@ class Navbar extends Component{
                       <Link className="nav-link active" to='/'>الرئيسية </Link>
                           </li>
                      <li className="nav-item mr-2">
-                     <Link className="nav-link"to='/للبيع'>للبيع</Link>
+                     <Link className="nav-link"to= '/seal'>للبيع</Link>
                       </li>
                       <li className="nav-item mr-2">
-                     <Link className="nav-link"to='/للايجار'>للايجار</Link>
+                     <Link className="nav-link" to='/rent'>للايجار </Link>
                       </li>
                       <li className="nav-item mr-2">
-                     <Link className="nav-link"to='/اعلن'>اعلن عن عقارك</Link>
+                     <Link className="nav-link"to='/adv'>اعلن عن عقارك </Link>
                       </li>
                       </ul>
                 </NavbarContent>
