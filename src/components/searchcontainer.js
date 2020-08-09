@@ -8,15 +8,18 @@ class Search extends Component{
 
     constructor(props) {
         super(props);
-        this.state = {typeselect:" ",
-        placeselect:" ",
+        this.state = {typeselect:"",
+        placeselect:"",
+        catselect:"",
         typeError:"يرجى اختيار النوع",
         placeErrror:"يرجى اختيار الموقع",
+        catError:"يرجى اختيار قسم",
         redirect:false,
         result:" "
         };
         this.handletypeChange = this.handletypeChange.bind(this);
         this.handleplaceChange= this.handleplaceChange.bind(this);
+        this.handlecategoryChange= this.handlecategoryChange.bind(this);
         this.handelsubmit= this.handelsubmit.bind(this);
 }
    
@@ -28,6 +31,16 @@ class Search extends Component{
         
         this.setState({typeselect:typeselect,
             typeError:typeError
+        });
+      };
+      handlecategoryChange=(e)=>{
+        var catselect =e.target.value;
+        var catError=" ";
+        
+        if (catselect === null){catError = "يرجى اختيار النوع";}
+        
+        this.setState({catselect:catselect,
+            catError:catError
         });
       };
       handleplaceChange=(e)=>{
@@ -42,7 +55,7 @@ class Search extends Component{
       handelsubmit=(event)=>{
         event.preventDefault();
        
-            if (this.state.placeselect!==null&&this.state.typeselect!==null) {
+            if (this.state.placeselect&&this.state.typeselect&&this.state.catselect) {
                 return( this.setState({
                     redirect:true
                 }))
@@ -84,6 +97,18 @@ class Search extends Component{
                                 <div className="row">
                                     <div className="col-lg-12  d-flex changable-region">
                                     <div  className="custom-select-2 b-left py-3 pr-2"style={{width:"50rem"}} >
+                                       <select className="custom-select text-subtitle" value={this.state.catselect}    
+                                         onChange={this.handlecategoryChange} id="inlineFormCustomSelect" >
+                                        <option value="" data-select2-id="3">القسم...</option>
+                                       <option value="شقق">شقق</option>
+                                        <option value="فيلا">فلل</option>
+                                        <option value="استديوهات وغرف">استديوهات وغرف</option>
+                                        <option value="أراضي">أراضي</option>
+                                        <option value=" شاليهات"> شاليهات</option>
+                                        <option value="عمارات">عمارات</option>
+                                       </select>
+                                          </div>
+                                    <div  className="custom-select-2 b-left py-3 "style={{width:"50rem"}} >
                                        <select className="custom-select text-subtitle" value={this.state.typeselect}    
                                          onChange={this.handletypeChange} id="inlineFormCustomSelect" >
                                         <option value="" data-select2-id="3">النوع...</option>
@@ -120,9 +145,23 @@ class Search extends Component{
                                         
                                     </div>
                                     <div className="py-3" >
-                                      
-                                    <button  type="submit"  className="btn search-btn px-5 text-bright"><span>بحث</span></button>
-                                  
+                                    {(()=> { 
+                                        if(this.state.placeselect&&this.state.typeselect&&this.state.catselect){
+                                            return(<Link  to={{ pathname: `/result`, state: { referrer:this.state} }}
+                                            className={`card-wrapper restore-${this.state}`}
+                                          >
+                                                                    
+                                                                  <button   className="btn search-btn px-5 text-bright"><span>بحث</span></button>
+                                                                </Link>)
+                                        }
+                                        else{
+                                           return(<button   className="btn search-btn px-5 text-bright"><span>بحث</span></button> ) 
+                                        }
+                                    
+                                    })()}
+                                    
+            
+                                    
                                     </div>
                                     
                                     </div>

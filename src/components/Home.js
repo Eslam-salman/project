@@ -3,9 +3,13 @@ import styled from 'styled-components';
 import {Link} from 'react-router-dom';
 import {HomeConsumer} from './Context';
 import PropTypes from 'prop-types'
+
+
+    
 class Home extends Component{
     
     render(){
+         
         const{id,title,img,price,area,type}=this.props.item;
         return(
             <Productwrapper className="col-12 col-sm-12 col-md-6 col-lg-4 ">
