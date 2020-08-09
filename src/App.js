@@ -20,6 +20,7 @@ import Villa from './components/Villa'
 import Room from './components/room'
 import Building from './components/Building'
 import Resort from './components/Resort'
+import Footer from './components/footer'
 function App() {
   return (
     <React.Fragment>
@@ -39,6 +40,7 @@ function App() {
       <Route path="/seal" component={Seal}/>
       <Route path="/adv" component={Adv}/>
       </Switch>
+      <Footer/>
     </React.Fragment>
    
     

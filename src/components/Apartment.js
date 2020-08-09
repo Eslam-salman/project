@@ -16,7 +16,7 @@ class Apartment extends Component{
             <div className="row ">
           
             <div className="mr-3 ">
-          <h5 className="spborder  mb-0 p-3" style={{color:"#3f51b5"}}> شقق للبيع</h5>  
+          <h5 className="spborder  mb-0 p-3" style={{color:"#3f51b5"}}> شقق للبيع والايجار </h5>  
     </div>  
     <div className="hline mr-3 mt-0 pt-0" ></div>  
                
